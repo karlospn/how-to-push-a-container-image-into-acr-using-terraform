@@ -83,6 +83,6 @@ To be more specific, it executes the following Docker commands:
 - ``docker login``: Used for logging into the ACR. To login, it uses the ACR admin user and password.
 - ``docker push:`` Used to push the image into the ACR.
 
-And what's the advantage of this scenario over the previous one? In my opinion, there is no advantage; I consider this the least preferable of the three scenarios. I would opt to run the other two scenarios before considering this one.
+**And what's the advantage of this scenario over the previous one?** In my opinion, there is no advantage; I consider this the least preferable of the three scenarios. I would opt to run the other two scenarios before considering this one.
 
 This scenario, similar to the previous ones, creates an Azure Web App that uses the image that has been pushed, allowing us to test it in a live environment.
