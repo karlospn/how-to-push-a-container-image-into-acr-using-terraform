@@ -6,7 +6,7 @@ This repository provides three available options for pushing a container image t
 
 - An ACR with admin user and password enabled.
 
-In the ``/prereqs`` folders you'll find a set of Terraform files that creates a **Resource Group**, an **ACR** and also an **Azure Linux Service Plan**.
+In the ``/prereqs`` folder you'll find a set of Terraform files that creates a **Resource Group**, an **ACR** and also an **Azure Linux Service Plan**.
 
 The Azure Service Plan has been created to test the image pushed to ACR using Terraform. If you prefer an alternative to Azure Web Apps, you can replace it with another service, such as Azure Container Apps, and it will work in the same manner.
 
