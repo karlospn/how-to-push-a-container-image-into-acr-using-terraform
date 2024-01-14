@@ -80,7 +80,7 @@ This scenario employs the Terraform ``null_resource`` resource to execute a sequ
 To be more specific, it executes the following Docker commands:
 
 - ``docker build``: Used to build the container app image.
-- ``docker login``: Used for logging into the ACR. To login, it uses the ACR admin user and password.
+- ``docker login``: Used for login into the ACR. To login, it uses the ACR admin user and password.
 - ``docker push:`` Used to push the image into the ACR.
 
 **And what's the advantage of this scenario over the previous one?** In my opinion, there is no advantage; I consider this the least preferable of the three scenarios. I would opt to run the other two scenarios before considering this one.
