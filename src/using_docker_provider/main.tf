@@ -22,7 +22,12 @@ resource "docker_image" "init_app" {
 # Push container image to ACR
 resource "docker_registry_image" "push_image_to_acr" {
   name          = docker_image.init_app.name
-  keep_remotely = true
+  keep_remotely = false
+  
+  triggers = {
+    dir_sha1 = sha1(join("", [for f in fileset(path.cwd, "init-app/*") : filesha1(f)]))
+  }
+  
 }
 
 # Create an app service using the recelenty pushed image to ACR

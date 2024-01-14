@@ -14,6 +14,7 @@ resource "null_resource" "docker_image" {
         dockerfile_context = "${path.cwd}/init-app"
         registry_admin_username = data.azurerm_container_registry.acr.admin_username
         registry_admin_password = data.azurerm_container_registry.acr.admin_password
+        dir_sha1 = sha1(join("", [for f in fileset(path.cwd, "init-app/*") : filesha1(f)]))
     }
     provisioner "local-exec" {
         command = "./scripts/docker_build_and_push_to_acr.sh ${self.triggers.image_name} ${self.triggers.image_tag} ${self.triggers.registry_uri} ${self.triggers.dockerfile_path} ${self.triggers.dockerfile_context} ${self.triggers.registry_admin_username} ${self.triggers.registry_admin_password}" 
